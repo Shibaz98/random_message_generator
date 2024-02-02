@@ -8,7 +8,7 @@ const leisure = {
 
 
 let randomIndex = (num) =>{
-    return Math.floor(Math.random() * num)   // This function allows me to generatre a random number, num argument is the length of the given array so I don't need to stress about it being a fixed number
+    return Math.floor(Math.random() * num)   // This function allows me to generatre a random number, num argument is the length of the given array so I don't need to stress about the array length 
 }
 
 let randomMessageArray = []; 
@@ -18,13 +18,13 @@ for (let key in leisure){
     
         switch(key){
             case 'gaming':
-                randomMessageArray.push(`Since it's your day off, you should play a console game, I recommend: ${leisure[key][optionIndex]}`)
+                randomMessageArray.push(`Since it's your day off let me plan your day for you, you should definitely play a console game, I recommend: ${leisure[key][optionIndex]}.`)
                 break;
             case 'physical activity':
-                randomMessageArray.push(`Don't spend the entire day playing games, definitely do a physical activity such as: ${leisure[key][optionIndex]}`) 
+                randomMessageArray.push(`Don't spend the entire day playing games, definitely do a physical activity such as: ${leisure[key][optionIndex]}.`) 
                 break;
             case 'food options':
-                randomMessageArray.push(`For dinner, you should have: ${leisure[key][optionIndex]}`)
+                randomMessageArray.push(`For dinner, you should have: ${leisure[key][optionIndex]}.`)
                 break;      
         }
     
@@ -42,7 +42,12 @@ for (let key in leisure){
 }
 
 
+const formatter = (message) =>{
+    let formatted = message.join(' ')       // This function takes the argument of the randomMessageArray and formats it into a neat sentence with the .join method
+    console.log(formatted)
+}
 
+formatter(randomMessageArray)
 
 
 
